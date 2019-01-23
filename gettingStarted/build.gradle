@@ -1,0 +1,37 @@
+sourceSets {
+	main {
+		java {
+			srcDirs = [ 'src/main/java' ]
+			srcDir 'src/main/orcha'
+		}
+		groovy {
+			srcDirs = [ 'src/main/groovy' ]
+			srcDir 'src/main/orcha'
+		}
+	}
+	test {
+		java {
+			srcDirs = [ 'src/test/java' ]
+			srcDir 'src/test/orcha'
+		}
+		groovy {
+			srcDirs = [ 'src/test/groovy' ]
+			srcDir 'src/test/orcha'
+		}
+		resources {
+			srcDirs = ["src/test/resources"]
+		}
+	}
+}
+
+dependencies {
+	compile project(':orchalang')
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-stream', version: '2.1.0.RELEASE'
+    compile 'org.springframework.integration:spring-integration-file'
+    
+    /*implementation('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.codehaus.groovy:groovy-all:2.4.5')*/
+	/*testCompile('org.springframework.boot:spring-boot-starter-test')*/
+}
